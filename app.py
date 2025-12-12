@@ -294,6 +294,78 @@ st.markdown("""
         border-radius: 4px;
         font-size: 0.85em;
     }
+
+    /* Streamlit Modal/Lightbox/Dialog Overrides for Text Visibility */
+    [data-testid="stModal"],
+    [data-testid="stDialog"],
+    .stModal,
+    .element-container .stMarkdown,
+    [data-baseweb="modal"],
+    [role="dialog"] {
+        color: var(--text-primary) !important;
+    }
+
+    /* Ensure dark text in modals and overlays */
+    [data-testid="stModal"] *,
+    [data-testid="stDialog"] *,
+    [data-baseweb="modal"] *,
+    [role="dialog"] *,
+    .stModal *,
+    div[data-baseweb="modal"] div,
+    div[data-baseweb="modal"] p,
+    div[data-baseweb="modal"] span,
+    div[data-baseweb="modal"] h1,
+    div[data-baseweb="modal"] h2,
+    div[data-baseweb="modal"] h3,
+    div[data-baseweb="modal"] h4,
+    div[data-baseweb="modal"] h5,
+    div[data-baseweb="modal"] h6 {
+        color: var(--text-primary) !important;
+    }
+
+    /* Image lightbox text visibility */
+    button[kind="header"],
+    button[kind="icon"] {
+        color: var(--text-primary) !important;
+        background-color: rgba(255, 255, 255, 0.95) !important;
+    }
+
+    /* Ensure AI response content text is dark and visible */
+    .ai-response-content,
+    .ai-response-content * {
+        color: var(--text-primary) !important;
+    }
+
+    /* Fix any light text in light containers */
+    .result-description,
+    .result-meta,
+    .result-title {
+        color: var(--text-primary) !important;
+    }
+
+    /* Override any Streamlit defaults that might cause light text */
+    .stMarkdown p,
+    .stMarkdown span,
+    .stMarkdown div {
+        color: inherit;
+    }
+
+    /* Ensure proper contrast in expandable sections */
+    .streamlit-expanderContent {
+        color: var(--text-primary) !important;
+    }
+
+    /* DataFrames and tables in modals */
+    [data-testid="stDataFrame"],
+    [data-testid="stTable"] {
+        color: var(--text-primary) !important;
+    }
+
+    /* Toast/notification text */
+    [data-testid="stNotification"],
+    [data-testid="stToast"] {
+        color: var(--text-primary) !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 
